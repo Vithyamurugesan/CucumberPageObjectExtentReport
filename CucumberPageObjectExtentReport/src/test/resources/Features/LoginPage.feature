@@ -1,8 +1,7 @@
-Feature: Login to HRM Application
+Feature: Login functionality for HRM Application
 
-@ValidCredentials
-
-Scenario: Login with valid Credentials
-           Given User is on HRMLogin page "https://opensource-demo.orangehrmlive.com/"
-           When User enters username and password
-           Then User should be able to login successfully and should see dashboard
+  @ValidLogin
+  Scenario Outline: Login with valid credentials
+    Given User is on the HRMLogin page "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
+    When User enters username and password
+    Then User should be able to login successfully and should see Dashboard

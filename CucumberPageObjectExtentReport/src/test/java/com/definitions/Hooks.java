@@ -1,5 +1,9 @@
 package com.definitions;
 
+import java.io.File;
+import java.io.IOException;
+
+import io.cucumber.java.Scenario;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -8,78 +12,60 @@ import org.openqa.selenium.TakesScreenshot;
 
 import com.utilities.HelperClass;
 
-import java.io.File;
-import java.io.IOException;
-
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
 
 public class Hooks {
+	
 
-    private static final Logger logger =
-            LogManager.getLogger(Hooks.class);
+    private static final Logger log = LogManager.getLogger(Hooks.class);
 
     @Before
     public void setup(Scenario scenario) {
 
         HelperClass.setUpDriver();
 
-        logger.info("Scenario started: {}", scenario.getName());
+        log.info("Scenario Started: " + scenario.getName());
     }
 
     @After
-    public void tearDown(Scenario scenario) {
+    public void teardown(Scenario scenario) {
 
         if (scenario.isFailed()) {
 
-            File screenshotFile =
-                    ((TakesScreenshot) HelperClass.getDriver())
+            File screenshot = ((TakesScreenshot) HelperClass.getDriver())
                     .getScreenshotAs(OutputType.FILE);
 
             try {
 
-                File destFile = new File(
+                File destinationfile = new File(
                         "screenshots/"
-                        + scenario.getName().replaceAll(" ", "_")
-                        + ".png");
+                                + scenario.getName().replaceAll(" ", "_")
+                                + ".png");
 
-                FileUtils.copyFile(screenshotFile, destFile);
+                FileUtils.copyFile(screenshot, destinationfile);
 
-                byte[] screenshotBytes =
+                byte[] screenshotbytes =
                         ((TakesScreenshot) HelperClass.getDriver())
-                        .getScreenshotAs(OutputType.BYTES);
+                                .getScreenshotAs(OutputType.BYTES);
 
                 scenario.attach(
-                        screenshotBytes,
+                        screenshotbytes,
                         "image/png",
                         "Failure Screenshot");
 
-                logger.error(
-                        "Scenario failed: {}",
-                        scenario.getName());
+                log.error("Scenario Failed: " + scenario.getName());
 
+            } catch (IOException e) {
+
+                log.error("Failed to take screenshot: " + e.getMessage());
             }
 
-            catch (IOException e) {
+        } else {
 
-                logger.error(
-                        "Failed to take screenshot: {}",
-                        e.getMessage());
-            }
-        }
-
-        else {
-
-            logger.info(
-                    "Scenario passed: {}",
-                    scenario.getName());
+            log.info("Scenario Passed: " + scenario.getName());
         }
 
         HelperClass.tearDown();
-
-        logger.info(
-                "Scenario ended: {}",
-                scenario.getName());
     }
 }

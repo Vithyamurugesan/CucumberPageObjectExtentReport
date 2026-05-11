@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon May 11 00:21:25 IST 2026</td>
+<td>Started on:</td><td>Mon May 11 07:04:55 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>33 seconds (33390 ms)</td>
+<tr><td>Total time:</td><td>10 seconds (10018 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -76,34 +76,9 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.runner.CucumberRunnerTests.runScenario()'><b>runScenario</b><br>Test class: com.runner.CucumberRunnerTests<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login with valid Credentials", "Login to HRM Application"</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //span[contains(@class,&apos;oxd-topbar-header-breadcrumb-module&apos;)], but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[contains(@class,&apos;oxd-topbar-header-breadcrumb-module&apos;)]&quot;}.
-(tried for 20 seconds with 500 milliseconds interval)
-Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.138, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\vithy\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64962}, goog:processID: 23120, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64962/devtoo..., se:cdpVersion: 147.0.7727.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5def07d347f9a69371624d17b4ed23dc
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
-	at com.actions.HomePageActions.getHomePageText(HomePageActions.java:18)
-	at com.definitions.LoginPageDefinitions.verifyLogin(LoginPageDefinitions.java:31)
-	at ✽.User should be able to login successfully and should see dashboard(file:///E:/MavenProject/CucumberPageObjectExtentReport/src/test/resources/features/LoginPage.feature:8)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1977776214", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1977776214'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element found by By.xpath: //span[contains(@class,&apos;oxd-topbar-header-breadcrumb-module&apos;)], but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[contains(@class,&apos;oxd-topbar-header-breadcrumb-module&apos;)]&quot;}.
-(tried for 20 seconds with 500 milliseconds interval)
-Build info: version: &apos;4.43.0&apos;, revision: &apos;dd0f534&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.138, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\vithy\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64962}, goog:processID: 23120, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64962/devtoo..., se:cdpVersion: 147.0.7727.138, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5def07d347f9a69371624d17b4ed23dc
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
-	at com.actions.HomePageActions.getHomePageText(HomePageActions.java:18)
-	at com.definitions.LoginPageDefinitions.verifyLogin(LoginPageDefinitions.java:31)
-	at ✽.User should be able to login successfully and should see dashboard(file:///E:/MavenProject/CucumberPageObjectExtentReport/src/test/resources/features/LoginPage.feature:8)
-</pre></div></td>
-<td>33</td>
+<td title='com.runner.CucumberRunnerTests.runScenario()'><b>runScenario</b><br>Test class: com.runner.CucumberRunnerTests<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login with valid credentials", "Login functionality for HRM Application"</td>
+<td></td>
+<td>9</td>
 <td>com.runner.CucumberRunnerTests@74f6c5d8</td></tr>
 </table><p>
 </body>

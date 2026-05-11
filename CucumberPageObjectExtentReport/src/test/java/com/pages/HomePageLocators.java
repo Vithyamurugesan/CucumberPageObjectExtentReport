@@ -6,6 +6,6 @@ import org.openqa.selenium.support.FindBy;
 public class HomePageLocators {
 
    
-    @FindBy(xpath = "//h6[contains(text(),'Dashboard')]")
-    public WebElement homePageUserName;
+	@FindBy(xpath = "//*[contains(text(),'Dashboard')]")
+	public WebElement homePageUserName;
 }
