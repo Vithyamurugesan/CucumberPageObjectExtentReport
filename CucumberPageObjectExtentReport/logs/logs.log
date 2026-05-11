@@ -56,3 +56,5 @@
 [INFO ] 2026-05-11 07:06:43.130 [main] Hooks - Scenario Passed: Login with valid credentials
 [INFO ] 2026-05-11 07:11:36.711 [main] Hooks - Scenario Started: Login with valid credentials
 [INFO ] 2026-05-11 07:11:46.781 [main] Hooks - Scenario Passed: Login with valid credentials
+[INFO ] 2026-05-11 07:44:46.608 [main] Hooks - Scenario Started: Login with valid credentials
+[INFO ] 2026-05-11 07:44:55.729 [main] Hooks - Scenario Passed: Login with valid credentials

@@ -39,6 +39,16 @@ public class LoginPageActions {
                 this.loginpageLocators.passWord));
         this.loginpageLocators.passWord.sendKeys(strPassWord);
     }
+    public String getErrorMessage() {
+
+        WebDriverWait wait = new WebDriverWait(
+                HelperClass.getDriver(),
+                Duration.ofSeconds(20));
+
+        wait.until(ExpectedConditions.visibilityOf(loginpageLocators.txtErrorMessage));
+
+        return loginpageLocators.txtErrorMessage.getText();
+    }
     
     public void clickLogin() {
     	loginpageLocators.login.click();
@@ -73,6 +83,7 @@ public class LoginPageActions {
 		this.setStrPassWord(strPassword);
 		this.clickLogin();
 	}
+   
 }
 
 
